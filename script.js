@@ -1,37 +1,49 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
 // Handle PDF download
 function handleDownload() {
     // In a real implementation, this would link to your actual PDF file
     alert('Privacy Policy PDF would be downloaded here. Please upload your actual privacy policy PDF to your server and update the href attribute in the download button.');
 }
 
-// Add scroll effect to navigation
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 0) {
-        nav.style.background = 'rgba(80, 191, 119, 0.5)';
+document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
 
-    } else {
-        nav.style.background = 'rgba(255, 255, 255, 0.1)';
+    // --- Cursor Glow Effect ---
+    const cursorGlow = document.getElementById('cursor-glow');
+    if (cursorGlow) {
+        window.addEventListener('mousemove', (e) => {
+            gsap.to(cursorGlow, {
+                duration: 0.5,
+                x: e.clientX,
+                y: e.clientY,
+                ease: 'power2.out'
+            });
+        });
     }
-});
 
-// Add parallax effect to hero
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+    // --- Horizontal Scroll Animation ---
+    const track = document.getElementById("scroll-track");
+    const pinContainer = document.getElementById("pin-container");
+
+    // Use GSAP to create the horizontal scroll effect
+    // This works by "pinning" the container and moving the track horizontally
+    // as the user scrolls vertically.
+    let scrollTween = gsap.to(track, {
+        xPercent: -100 * (track.children.length - 1),
+        ease: "none", // IMPORTANT!
+        scrollTrigger: {
+            trigger: pinContainer,
+            pin: true,
+            scrub: 1, // Makes the animation smooth
+            end: () => "+=" + (track.offsetWidth - window.innerWidth) * 2, // Multiplier increases scroll distance
+            // Break the animation on smaller screens
+            invalidateOnRefresh: true,
+        }
+    });
+
+    // Kill the scroll trigger on mobile
+    ScrollTrigger.matchMedia({
+        "(max-width: 899px)": function() {
+            if (scrollTween) scrollTween.kill();
+        }
+    });
 });

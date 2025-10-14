@@ -1,100 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PotLuck - Wager with Friends</title>
+    <title>Potluck Markets - Social Prediction Markets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
-
 <body>
+    <div id="cursor-glow"></div>
+
     <nav>
         <div class="container">
-            <div class="nav-content">
-                <a href="#" class="logo">PotLuck</a>
-                <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#privacy">Privacy</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
+            <a href="#" class="logo">Potluck Markets</a>
+            <a href="mailto:contact@potluck.app" class="nav-contact">Contact Us</a>
         </div>
     </nav>
 
-    <div class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <h1>PotLuck</h1>
-                <div class="hero-subtitle">Wager with Friends</div>
-                <p class="hero-description">
-                    The trusted way to bet on anything with your friends. No more awkward texts or forgotten
-                    debts.
-                    PotLuck handles the money so you can focus on the fun.
-                </p>
-            </div>
-        </section>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Predict. Compete. Win.</h1>
+            <p class="hero-subtitle">The social prediction market where you can challenge your friends on anything. Fair, transparent, and automated.</p>
+        </div>
+        <div class="scroll-down-indicator">
+            <span>Scroll to Explore</span>
+            <div class="arrow"></div>
+        </div>
+    </header>
 
-        <section class="privacy-section" id="privacy">
-            <h2>Privacy Policy</h2>
-            <p>
-                Your privacy and security are our top priorities. We believe in complete transparency about how we
-                collect,
-                use, and protect your personal information. Download our comprehensive privacy policy to learn more
-                about
-                our commitment to your data protection.
-            </p>
-
-            <div class="pdf-container">
-                <span class="pdf-icon">📄</span>
-                <div class="pdf-title">PotLuck Privacy Policy</div>
-                <div class="pdf-description">
-                    Complete details about our data practices, security measures, and your rights as a user.
+    <main id="pin-container">
+        <div id="scroll-track">
+            <section class="horizontal-section" id="about">
+                <div class="section-content">
+                    <div class="text-content">
+                        <h2>What is Potluck Markets?</h2>
+                        <p>Potluck Markets is a social platform where users can create and participate in prediction markets with friends. It automates settlement and payouts, removing disputes and ensuring fairness.</p>
+                    </div>
+                    <div class="card-stack">
+                        <div class="card">Private Markets</div>
+                        <div class="card">Secure Escrow</div>
+                        <div class="card">Instant Payouts</div>
+                    </div>
                 </div>
-                <a href="#" class="download-btn" onclick="handleDownload()">
-                    Download Privacy Policy
-                </a>
-            </div>
-        </section>
+            </section>
 
-        <section class="privacy-section" id="features">
-            <h2>Why Choose PotLuck?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Secure Escrow</h3>
-                    <p>We hold all wagers in secure escrow until the bet is settled. No more chasing friends for money.
-                    </p>
+            <section class="horizontal-section" id="privacy">
+                <div class="section-content privacy-content">
+                    <div class="text-content">
+                        <h2>Your Trust, Our Priority.</h2>
+                        <p>We are committed to protecting your data and privacy. Our platform is built on a foundation of security and transparency. Download our full policy to see how we safeguard your information.</p>
+                        <a href="#" class="cta-button" onclick="handleDownload()">Download Privacy Policy</a>
+                    </div>
+                    <div class="privacy-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" />
+                        </svg>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <h3>Instant Payouts</h3>
-                    <p>Winners get paid immediately when bets are resolved. Fast, fair, and automatic.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Friend Groups</h3>
-                    <p>Create private betting circles with your trusted friends. Keep it social and fun.</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="privacy-section" id="contact">
-            <h2>Contact Us</h2>
-            <p>If you have questions, feedback, or partnership inquiries, we’d love to hear from you.</p>
-            <div class="contact-section">
-                <a href="mailto:contact@potluck.app" class="download-btn">contact@potluck.app</a>
-            </div>
-        </section>
-    </div>
-
-
-
+        </div>
+    </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 PotLuck. All rights reserved. Wagering responsibly is key to keeping it fun.</p>
+            <p>&copy; 2025 Potluck Markets. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
-
 </html>
