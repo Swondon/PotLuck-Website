@@ -290,6 +290,9 @@ footer .container {
     .privacy-content {
         flex-direction: column-reverse;
     }
+    .hero-subtitle {
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
