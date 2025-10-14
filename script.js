@@ -5,7 +5,7 @@ function handleDownload() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     // --- Cursor Glow Effect ---
     const cursorGlow = document.getElementById('cursor-glow');
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Kill the scroll trigger on mobile
+    // Kill animations on mobile
     ScrollTrigger.matchMedia({
         "(max-width: 899px)": function() {
             if (scrollTween) scrollTween.kill();

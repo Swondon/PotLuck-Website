@@ -60,6 +60,17 @@ nav .container {
     font-weight: 600;
     color: var(--text-light);
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-image {
+    height: 32px;
+    width: 32px;
+    /* This helps blend the logo's black background with the nav bar */
+    mix-blend-mode: screen;
+    filter: brightness(1.2);
 }
 
 .nav-contact {
@@ -104,6 +115,7 @@ nav .container {
     color: var(--text-dark);
     max-width: 600px;
     line-height: 1.6;
+    text-align: left;
 }
 
 .scroll-down-indicator {
@@ -148,6 +160,7 @@ nav .container {
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    position: relative; /* Added for positioning the nav container */
     justify-content: center;
     padding: 0 5vw;
 }
@@ -231,10 +244,62 @@ nav .container {
     box-shadow: 0 10px 30px rgba(158, 120, 247, 0.3);
 }
 
-/* --- Scroll Dots --- */
-#scroll-dots-container {
-    position: fixed;
-    right: 30px;
+/* --- Footer --- */
+footer {
+    background-color: #110a1f;
+    border-top: 1px solid var(--border-color);
+}
+
+footer .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    #pin-container {
+        height: auto;
+        width: auto;
+        overflow: visible;
+    }
+    #scroll-track {
+        display: block;
+        height: auto;
+        transform: none !important; /* Override GSAP */
+    }
+    .horizontal-section {
+        height: auto;
+        min-height: 80vh;
+        padding: 100px 5vw;
+    }
+    .section-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+    .text-content {
+        max-width: 100%;
+    }
+    .card-stack {
+        margin-top: 40px;
+    }
+    .privacy-content {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 768px) {
+    nav .container {
+        padding: 0 20px;
+    }
+    footer .container {
+        padding: 30px 20px;
+    }
+}
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -286,9 +351,6 @@ footer .container {
 
 /* --- Responsive Design --- */
 @media (max-width: 900px) {
-    body {
-        display: none;
-    }
     #pin-container {
         height: auto;
         width: auto;
