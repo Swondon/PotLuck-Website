@@ -24,26 +24,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById("scroll-track");
     const pinContainer = document.getElementById("pin-container");
 
-    // Use GSAP to create the horizontal scroll effect
-    // This works by "pinning" the container and moving the track horizontally
-    // as the user scrolls vertically.
-    let scrollTween = gsap.to(track, {
-        xPercent: -100 * (track.children.length - 1),
-        ease: "none", // IMPORTANT!
-        scrollTrigger: {
-            trigger: pinContainer,
-            pin: true,
-            scrub: 1, // Makes the animation smooth
-            end: () => "+=" + (track.offsetWidth - window.innerWidth) * 2, // Multiplier increases scroll distance
-            // Break the animation on smaller screens
-            invalidateOnRefresh: true,
-        }
-    });
-
-    // Kill animations on mobile
+    // --- Horizontal Scroll Animation with a "Stop" ---
+    // We use a GSAP timeline to create a more complex scroll-driven animation.
+    // This allows us to "pause" on a specific section.
+    let scrollTween;
+    
+    // Only run the animation on screens wider than 900px
     ScrollTrigger.matchMedia({
-        "(max-width: 899px)": function() {
-            if (scrollTween) scrollTween.kill();
+        "(min-width: 900px)": function() {
+            const sections = gsap.utils.toArray(".horizontal-section");
+            const numSections = sections.length;
+
+            // Create a timeline for the horizontal scroll
+            scrollTween = gsap.timeline({
+                scrollTrigger: {
+                    trigger: pinContainer,
+                    pin: true,
+                    scrub: 1,
+                    // We set a large end value to create the long scroll effect.
+                    // '100%' for each section transition, but a much larger value for the "stop".
+                    end: () => "+=" + (pinContainer.offsetWidth * (numSections + 0.1)), // +0.1 gives a very short pause
+                    invalidateOnRefresh: true,
+                }
+            });
+
+            // 1. Animate from the first to the second section (Privacy)
+            scrollTween.to(track, { xPercent: -100, ease: "none" });
+
+            // 2. Animate from the second to the third section (App Launch)
+            // We add a delay (the ">+0.1" part) to create the "stop" effect.
+            // The user will have to scroll more before this part of the animation begins.
+            scrollTween.to(track, { xPercent: -200, ease: "none" }, ">+0.1");
         }
     });
 });

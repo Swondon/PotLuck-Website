@@ -216,40 +216,12 @@ nav .container {
 .card-stack:hover .card:nth-child(2) { transform: rotate(0deg) scale(1.05); z-index: 2; }
 .card-stack:hover .card:nth-child(3) { transform: rotate(12deg) translate(20px, 40px); }
 
-/* --- Standalone Section (App Launch) --- */
-.standalone-section {
-    padding: 100px 40px;
-    background: linear-gradient(180deg, var(--bg-color) 0%, #150d24 100%);
-}
-
-.standalone-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.standalone-section .app-launch-content {
+/* --- App Launch Section Specifics --- */
+.app-launch-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
-}
-
-.standalone-section .text-content {
-    flex: 1;
-    max-width: 500px;
-}
-
-.standalone-section .text-content h2 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.standalone-section .text-content p {
-    font-size: clamp(1rem, 2vw, 1.1rem);
-    color: var(--text-dark);
-    line-height: 1.7;
 }
 
 .features-list {
@@ -395,12 +367,9 @@ footer .container {
     .privacy-content {
         flex-direction: column-reverse;
     }
-    .standalone-section .app-launch-content {
+    .app-launch-content {
         flex-direction: column;
         text-align: center;
-    }
-    .standalone-section .text-content {
-        max-width: 100%;
     }
     .phone-mockup {
         width: 240px;
@@ -410,11 +379,6 @@ footer .container {
         text-align: center;
     }
 }
-
-@media (max-width: 768px) {
-    .standalone-section {
-        padding: 60px 20px;
-    }
 
 @media (max-width: 768px) {
     nav .container {
