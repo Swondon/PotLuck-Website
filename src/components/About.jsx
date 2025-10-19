@@ -10,14 +10,14 @@ export default function About() {
             Potluck Markets is a social platform where users can create and participate in prediction markets with friends. It automates settlement and tracks payouts, removing disputes and ensuring fairness.
           </p>
         </div>
-        <div className="relative group">
-          <div className="card bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl p-6 w-72 backdrop-blur-sm transition-transform duration-500 -rotate-6 -translate-y-8">
+        <div className="group" style={{ perspective: '1000px' }}>
+          <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl px-8 py-5 w-[300px] backdrop-blur-sm transition-transform duration-500 ease-out text-xl font-medium -rotate-[5deg] -translate-y-8 group-hover:-rotate-[8deg] group-hover:-translate-x-5 group-hover:-translate-y-10">
             Private Markets
           </div>
-          <div className="card bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl p-6 w-72 backdrop-blur-sm transition-transform duration-500 rotate-3 z-10 absolute top-0 left-0 group-hover:scale-105 group-hover:rotate-0">
+          <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl px-8 py-5 w-[300px] backdrop-blur-sm transition-transform duration-500 ease-out text-xl font-medium rotate-[3deg] z-[1] group-hover:rotate-0 group-hover:scale-105 group-hover:z-[2]">
             Secure Escrow
           </div>
-          <div className="card bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl p-6 w-72 backdrop-blur-sm transition-transform duration-500 rotate-[8deg] translate-y-8 absolute top-0 left-0">
+          <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl px-8 py-5 w-[300px] backdrop-blur-sm transition-transform duration-500 ease-out text-xl font-medium rotate-[8deg] translate-y-8 group-hover:rotate-[12deg] group-hover:translate-x-5 group-hover:translate-y-10">
             Transaction Tracking
           </div>
         </div>

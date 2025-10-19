@@ -7,7 +7,6 @@
 @layer base {
   body {
     @apply bg-potluck-bg text-potluck-light overflow-x-hidden;
-    cursor: none;
   }
 }
 

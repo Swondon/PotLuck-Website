@@ -1,20 +1,21 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CursorGlow from './components/CursorGlow'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import HorizontalScroll from './components/HorizontalScroll'
-import AppLaunch from './components/AppLaunch'
 import Footer from './components/Footer'
+import HomePage from './pages/HomePage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <CursorGlow />
       <Navbar />
-      <Hero />
-      <HorizontalScroll />
-      <AppLaunch />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 
