@@ -2,10 +2,10 @@ export default function Hero() {
   return (
     <header className="h-screen flex flex-col justify-center items-center text-center px-5">
       <div className="space-y-5">
-        <h1 className="text-6xl md:text-8xl font-bold leading-tight bg-gradient-to-r from-potluck-purple to-potluck-pink bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-8xl font-bold leading-tight bg-gradient-to-r from-potluck-purple to-potluck-pink bg-clip-text text-transparent">
           Create. Track. Settle.
         </h1>
-        <p className="text-base md:text-xl text-potluck-dark max-w-2xl leading-relaxed mx-auto text-left md:text-center">
+        <p className="text-base md:text-xl text-potluck-dark max-w-2xl leading-relaxed mx-auto text-center">
           The peer-to-peer event-based contract tracker where you can create agreements with friends. Fair, transparent, and automated.
         </p>
       </div>
