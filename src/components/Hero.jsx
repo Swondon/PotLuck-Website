@@ -3,10 +3,10 @@ export default function Hero() {
     <header className="h-screen flex flex-col justify-center items-center text-center px-5">
       <div className="space-y-5">
         <h1 className="text-6xl md:text-8xl font-bold leading-tight bg-gradient-to-r from-potluck-purple to-potluck-pink bg-clip-text text-transparent">
-          Predict. Compete. Win.
+          Create. Track. Settle.
         </h1>
         <p className="text-base md:text-xl text-potluck-dark max-w-2xl leading-relaxed mx-auto text-left md:text-center">
-          The social prediction market where you can challenge your friends on anything. Fair, transparent, and automated.
+          The peer-to-peer event-based contract tracker where you can create agreements with friends. Fair, transparent, and automated.
         </p>
       </div>
       <div className="absolute bottom-10 opacity-70 text-sm animate-bounce">

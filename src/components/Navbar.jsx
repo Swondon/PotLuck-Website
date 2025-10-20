@@ -20,6 +20,12 @@ export default function Navbar() {
           >
             Privacy Policy
           </Link>
+          <Link
+            to="/terms-of-service"
+            className="text-potluck-light no-underline font-medium transition-colors hover:text-potluck-purple"
+          >
+            Terms of Service
+          </Link>
           <a
             href="mailto:contact@potluck.app"
             className="text-potluck-light no-underline font-medium px-4 py-2 border border-white/10 rounded-full transition-all hover:bg-potluck-purple hover:border-potluck-purple hover:text-potluck-bg"
