@@ -44,7 +44,7 @@ export default function HorizontalScroll() {
   return (
     <main>
       <About />
-      <Privacy />
+      {/* <Privacy /> */}
     </main>
   )
 

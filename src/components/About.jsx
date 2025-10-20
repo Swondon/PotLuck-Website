@@ -15,7 +15,7 @@ export default function About() {
             Private Markets
           </div>
           <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl px-8 py-5 w-[300px] backdrop-blur-sm transition-transform duration-500 ease-out text-xl font-medium rotate-[3deg] z-[1] group-hover:rotate-0 group-hover:scale-105 group-hover:z-[2]">
-            Secure Escrow
+            Peer to Peeer
           </div>
           <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl px-8 py-5 w-[300px] backdrop-blur-sm transition-transform duration-500 ease-out text-xl font-medium rotate-[8deg] translate-y-8 group-hover:rotate-[12deg] group-hover:translate-x-5 group-hover:translate-y-10">
             Transaction Tracking
