@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-potluck-bg text-potluck-light overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .cursor-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(158, 120, 247, 0.15) 0%, rgba(158, 120, 247, 0) 60%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: background 0.2s ease;
+    z-index: -1;
+  }
+}

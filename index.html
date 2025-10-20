@@ -1,104 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Potluck Markets - Social Prediction Markets</title>
-    <link rel="icon" href="potlucklogo.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <div id="cursor-glow"></div>
-
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="potlucklogo.png" alt="Potluck Markets Logo" class="logo-image">
-                <span>Potluck Markets</span>
-            </a>
-            <a href="mailto:contact@potluck.app" class="nav-contact">Contact Us</a>
-        </div>
-    </nav>
-
-    <header class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">Predict. Compete. Win.</h1>
-            <p class="hero-subtitle">The social prediction market where you can challenge your friends on anything. Fair, transparent, and automated.</p>
-        </div>
-        <div class="scroll-down-indicator">
-            <span>Scroll to Explore</span>
-            <div class="arrow"></div>
-        </div>
-    </header>
-
-    <main id="pin-container">
-        <div id="scroll-track">
-            <section class="horizontal-section" id="about">
-                <div class="section-content">
-                    <div class="text-content">
-                        <h2>What is Potluck Markets?</h2>
-                        <p>Potluck Markets is a social platform where users can create and participate in prediction markets with friends. It automates settlement and tracks payouts, removing disputes and ensuring fairness.</p>
-                    </div>
-                    <div class="card-stack">
-                        <div class="card">Private Markets</div>
-                        <div class="card">Secure Escrow</div>
-                        <div class="card">Transaction Tracking</div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="horizontal-section" id="privacy">
-                <div class="section-content privacy-content">
-                    <div class="text-content">
-                        <h2>Your Trust, Our Priority.</h2>
-                        <p>We are committed to protecting your data and privacy. Our platform is built on a foundation of security and transparency. Download our full policy to see how we safeguard your information.</p>
-                        <a href="#" class="cta-button" onclick="handleDownload()">Download Privacy Policy</a>
-                    </div>
-                    <div class="privacy-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 00-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H4.5a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                        </svg>
-                    </div>
-                </div>
-            </section>
-
-            <section class="horizontal-section" id="app-launch">
-                <div class="section-content app-launch-content">
-                    <div class="text-content">
-                        <h2>App Coming Soon</h2>
-                        <p>We're putting the finishing touches on the Potluck Markets app. Get ready to create and track event based contracts with your friends.</p>
-                        <div class="features-list">
-                            <div class="feature-item">
-                                <span>Mobile-First Experience</span>
-                            </div>
-                            <div class="feature-item">
-                                <span>Live Transaction Tracking</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="app-preview">
-                        <div class="phone-mockup">
-                            <div class="phone-screen">
-                                <div class="coming-soon-text">POTLUCK</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Potluck Markets. All Rights Reserved.</p>
-        </div>
-    </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/potlucklogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Potluck Markets - Event Contract Tracker</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
