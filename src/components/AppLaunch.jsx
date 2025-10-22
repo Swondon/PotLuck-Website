@@ -6,20 +6,20 @@ export default function AppLaunch() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-around w-full max-w-6xl gap-16 md:gap-[5vw] flex-col md:flex-row">
           <div className="max-w-lg text-center md:text-left">
-            <h2 className="text-4xl md:text-6xl font-bold mb-5 leading-tight">
-              App Coming Soon
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Available on the App Store
             </h2>
-            <p className="text-base md:text-lg text-potluck-dark leading-relaxed">
-              We're putting the finishing touches on the Potluck Markets app. Get ready to create and track event based contracts with your friends.
+            <p className="text-base md:text-lg text-potluck-dark leading-relaxed mb-8">
+              Download Potluck Markets today and start creating event-based contracts with your friends.
             </p>
-            <div className="mt-8 flex flex-col items-center md:items-start gap-4">
-              <div className="flex items-center gap-3 text-lg text-potluck-light">
-                <span>Mobile-First Experience</span>
-              </div>
-              <div className="flex items-center gap-3 text-lg text-potluck-light">
-                <span>Live Transaction Tracking</span>
-              </div>
-            </div>
+            <a
+              href="https://apps.apple.com/us/app/potluck-markets/id6753965126"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block transition-transform hover:scale-105"
+            >
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" className="h-14" />
+            </a>
           </div>
           <div className="mt-12 md:mt-0">
             <Carousel />
