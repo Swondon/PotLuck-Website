@@ -62,7 +62,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="relative z-10 bg-potluck-bg py-12 px-6 md:px-[5vw]">
+    <section ref={sectionRef} id="about" className="relative z-10 bg-potluck-bg pt-32 pb-20 px-6 md:px-[5vw]">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-6xl font-bold mb-5 leading-tight text-potluck-light">
           Why Potluck Markets?

@@ -58,7 +58,7 @@ export default function Hero() {
   const previousPhrase = previousIndex !== null ? phrases[previousIndex] : null;
 
   return (
-    <header className="h-screen flex flex-col justify-center items-center text-center px-5 sticky top-0">
+    <header className="h-screen flex flex-col justify-center items-center text-center px-5 bg-potluck-bg sticky top-0 z-0">
       <Navbar />
       <div className="space-y-12 w-full pt-24">
         <h1 className="text-5xl md:text-8xl leading-tight flex flex-col items-center">
