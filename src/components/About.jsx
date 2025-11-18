@@ -74,7 +74,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => {
             return (
-              <div key={feature.title} className={`bg-white/5 border border-white/10 rounded-xl p-6 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: `${index * 150}ms` }}>
+              <div key={feature.title} className={`bg-white/5 border border-white/10 rounded-3xl p-6 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: `${index * 150}ms` }}>
                 <feature.icon className="text-3xl text-potluck-purple mb-4 mx-auto" />
                 <h3 className="text-xl font-bold text-potluck-light mb-2">{feature.title}</h3>
                 <p className="text-potluck-dark leading-relaxed">{feature.description}</p>

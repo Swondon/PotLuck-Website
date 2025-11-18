@@ -46,7 +46,7 @@ export default function Possibilities() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {pots.map((pot, index) => (
-            <div key={index} className={`bg-white/5 border border-white/10 rounded-xl p-6 text-left transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: `${index * 100}ms` }}>
+            <div key={index} className={`bg-white/5 border border-white/10 rounded-3xl p-6 text-left transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: `${index * 100}ms` }}>
               <p className="text-xs font-semibold text-potluck-purple uppercase tracking-wider mb-2">{pot.category}</p>
               <h3 className="text-lg font-bold text-potluck-light">{pot.title}</h3>
             </div>

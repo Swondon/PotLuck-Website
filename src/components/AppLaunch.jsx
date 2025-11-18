@@ -6,7 +6,7 @@ export default function AppLaunch() {
     <section className="relative z-10 py-32 px-6 md:px-10 bg-gradient-to-b from-potluck-bg to-[#150d24]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 items-stretch">
         {/* Left Column: Text Content */}
-        <div className="md:col-span-3 bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 text-center flex flex-col justify-center">
+        <div className="md:col-span-3 bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 text-center flex flex-col justify-center">
           <div className="inline-block mx-auto bg-potluck-purple text-white text-xs font-bold py-1.5 px-4 rounded-full mb-4 uppercase tracking-wider">
             Available Now
           </div>
