@@ -30,7 +30,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full max-w-xs mx-auto overflow-hidden rounded-2xl shadow-lg">
+    <div className="relative w-full overflow-hidden rounded-2xl shadow-lg">
       <div className="relative w-full">
         <AnimatePresence mode="wait">
           <motion.img

@@ -1,85 +1,102 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+"use client";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import PotluckLogo from '/potlucklogo.png';
+
+const navLinks = [
+  { title: "How It Works", href: "#how-it-works" },
+  { title: "Features", href: "#about" },
+  { title: "Use Cases", href: "#possibilities" },
+  { title: "FAQ", href: "#" },
+];
+
+const menuVariants = {
+  hidden: {
+    x: '100%',
+    transition: {
+      type: 'spring',
+      stiffness: 300,
+      damping: 30,
+    },
+  },
+  visible: {
+    x: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 300,
+      damping: 30,
+    },
+  },
+};
+
+const linkVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1 + 0.3,
+      duration: 0.5,
+    },
+  }),
+};
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-potluck-bg/80 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="h-[70px] flex items-center justify-between">
-          <Link
-            to="/"
-            className="flex items-center gap-3 text-potluck-light text-xl font-semibold no-underline"
-            onClick={() => setIsOpen(false)}
-          >
-            <img
-              src="/potlucklogo.png"
-              alt="Potluck Markets Logo"
-              className="h-8 w-8"
-              style={{ mixBlendMode: 'screen', filter: 'brightness(1.2)' }}
-            />
-            <span className="hidden sm:inline">Potluck Markets</span>
-            <span className="sm:hidden">Potluck</span>
-          </Link>
-          <div className="hidden md:flex items-center gap-5">
-            <Link
-              to="/privacy-policy"
-              className="text-potluck-light no-underline font-medium transition-colors hover:text-potluck-purple"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/terms-of-service"
-              className="text-potluck-light no-underline font-medium transition-colors hover:text-potluck-purple"
-            >
-              Terms of Service
-            </Link>
-            <a
-              href="mailto:s.potluck.markets@gmail.com"
-              className="text-potluck-light no-underline font-medium px-4 py-2 border border-white/10 rounded-full transition-all hover:bg-potluck-purple hover:border-potluck-purple hover:text-potluck-bg"
-            >
-              Contact Us
-            </a>
-          </div>
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-potluck-light focus:outline-none">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                {isOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                )}
-              </svg>
-            </button>
-          </div>
-        </div>
+    <>
+      <div className="fixed top-6 left-6 z-50">
+        <a href="/" className="flex items-center space-x-3 group">
+          <img src={PotluckLogo} alt="Potluck Markets Logo" className="h-8 w-auto" />
+          <span className="text-potluck-light font-bold text-xl group-hover:text-potluck-purple transition-colors">Potluck Markets</span>
+        </a>
       </div>
-      {/* Mobile Menu */}
-      <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
-        <div className="px-6 pt-2 pb-4 space-y-3">
-          <Link
-            to="/privacy-policy"
-            className="block text-potluck-light no-underline font-medium transition-colors hover:text-potluck-purple"
-            onClick={() => setIsOpen(false)}
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            to="/terms-of-service"
-            className="block text-potluck-light no-underline font-medium transition-colors hover:text-potluck-purple"
-            onClick={() => setIsOpen(false)}
-          >
-            Terms of Service
-          </Link>
-          <a
-            href="mailto:s.potluck.markets@gmail.com"
-            className="block text-potluck-light no-underline font-medium transition-colors hover:text-potluck-purple"
-          >
-            Contact Us
-          </a>
-        </div>
+      <div className="fixed top-6 right-6 z-50">
+        <button onClick={toggleMenu} className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex flex-col justify-center items-center space-y-1.5 p-3">
+          <motion.span
+            className="block w-6 h-0.5 bg-potluck-light"
+            animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 4.5 : 0 }}
+            transition={{ duration: 0.3 }}
+          />
+          <motion.span
+            className="block w-6 h-0.5 bg-potluck-light"
+            animate={{ opacity: isOpen ? 0 : 1 }}
+            transition={{ duration: 0.2 }}
+          />
+          <motion.span
+            className="block w-6 h-0.5 bg-potluck-light"
+            animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -4.5 : 0 }}
+            transition={{ duration: 0.3 }}
+          />
+        </button>
       </div>
-    </nav>
-  )
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            variants={menuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="fixed top-0 right-0 h-full w-full sm:w-80 bg-potluck-bg/80 backdrop-blur-xl z-40 shadow-2xl"
+          >
+            <nav className="h-full flex flex-col justify-center items-center">
+              <ul className="space-y-8 text-center">
+                {navLinks.map((link, i) => (
+                  <motion.li key={link.title} custom={i} variants={linkVariants} initial="hidden" animate="visible">
+                    <a href={link.href} onClick={() => setIsOpen(false)} className="text-2xl font-bold text-potluck-light hover:text-potluck-purple transition-colors">
+                      {link.title}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
 }
