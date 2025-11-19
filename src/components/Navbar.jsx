@@ -8,11 +8,11 @@ const navLinks = [
     title: "Product",
     subLinks: [
       { title: "Features", href: "/features" },
-      { title: "How it Works", href: "#how-it-works" },
-      { title: "Use Cases", href: "#possibilities" },
-      { title: "FAQ", href: "#faq" },
-      { title: "Regulatory", href: "#regulatory" },
-      { title: "Refer A Friend", href: "#refer" },
+      { title: "How it Works", href: "/how-it-works" },
+      { title: "Use Cases", href: "/use-cases" },
+      { title: "FAQ", href: "/faq" },
+      { title: "Regulatory", href: "/regulatory" },
+      { title: "Refer A Friend", href: "/refer-a-friend" },
     ],
   },
   {
@@ -87,7 +87,7 @@ export default function Navbar() {
   return (
     <>
       {/* Main Navbar Container */}
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-between w-[95vw] max-w-7xl">
+      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] flex items-center justify-between w-[95vw] max-w-7xl">
         {/* Logo */}
         <div>
           <a href="/" className="flex items-center space-x-3 group h-12 px-4 bg-potluck-bg/50 backdrop-blur-md border border-potluck-dark rounded-full">
@@ -159,7 +159,7 @@ export default function Navbar() {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="fixed top-0 right-0 h-full w-full sm:w-80 bg-potluck-bg/80 backdrop-blur-xl z-40 shadow-2xl"
+            className="fixed top-0 right-0 h-full w-full sm:w-80 bg-potluck-bg/80 backdrop-blur-xl z-[90] shadow-2xl"
           >
             <nav className="h-full flex flex-col justify-center items-center pt-24 pb-12">
               <ul className="space-y-8 text-center">

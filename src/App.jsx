@@ -6,6 +6,13 @@ import HomePage from './pages/HomePage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import TermsOfServicePage from './pages/TermsOfServicePage'
 import FeaturesPage from './pages/FeaturesPage'
+import HowItWorksPage from './pages/HowItWorksPage'
+import UseCasesPage from './pages/UseCasesPage'
+import FaqPage from './pages/FaqPage'
+import RegulatoryPage from './pages/RegulatoryPage'
+import ReferFriendPage from './pages/ReferFriendPage'
+
+
 
 function App() {
   return (
@@ -15,8 +22,12 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/features" element={<FeaturesPage />} />
-        {/* <Route path="/how-it-works" element={<HowItWorksPage />} />
-        <Route path="/use-cases" element={<UseCasesPage />} /> */}
+        <Route path="/how-it-works" element={<HowItWorksPage />} />
+        <Route path="/use-cases" element={<UseCasesPage />} /> 
+        <Route path="/faq" element={<FaqPage />} /> 
+        <Route path="/regulatory" element={<RegulatoryPage />} /> 
+        <Route path="/refer-a-friend" element={<ReferFriendPage />} /> 
+
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
       </Routes>

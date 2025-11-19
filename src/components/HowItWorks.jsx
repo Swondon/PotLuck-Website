@@ -20,7 +20,7 @@ const steps = [
   {
     number: "04",
     title: "Auto Settlement",
-    description: "When the event concludes, smart contracts automatically distribute winnings. Fair and instant."
+    description: "When the event concludes, smart contracts automatically distribute IOUs. Fair and instant."
   }
 ];
 
