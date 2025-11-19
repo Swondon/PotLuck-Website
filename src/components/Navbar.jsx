@@ -18,10 +18,9 @@ const navLinks = [
   {
     title: "Company",
     subLinks: [
-      { title: "About", href: "#company-about" },
-      { title: "Press", href: "#press" },
-      { title: "Contact", href: "#contact" },
-      { title: "Brand", href: "#brand" },
+      { title: "About", href: "/about" },
+      { title: "Press", href: "/press" },
+      { title: "Contact", href: "/contact" },
     ],
   },
 ];

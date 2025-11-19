@@ -18,22 +18,22 @@ export default function Footer() {
           <div>
             <h3 className="text-base font-semibold text-potluck-light">Product</h3>
             <ul className="mt-4 space-y-3 text-xs">
-              <li><a href="#" className="text-potluck-dark hover:text-potluck-light">Features</a></li>
-              <li><a href="#" className="text-potluck-dark hover:text-potluck-light">How it Works</a></li>
-              <li><a href="#" className="text-potluck-dark hover:text-potluck-light">Use Cases</a></li>
-              <li><a href="#" className="text-potluck-dark hover:text-potluck-light">FAQ</a></li>
-              <li><a href="#" className="text-potluck-dark hover:text-potluck-light">Regulatory</a></li>
-              <li><a href="#" className="text-potluck-dark hover:text-potluck-light">Refer A Friend</a></li>
+              <li><a href="/features" className="text-potluck-dark hover:text-potluck-light">Features</a></li>
+              <li><a href="/how-it-works" className="text-potluck-dark hover:text-potluck-light">How it Works</a></li>
+              <li><a href="/use-cases" className="text-potluck-dark hover:text-potluck-light">Use Cases</a></li>
+              <li><a href="/faq" className="text-potluck-dark hover:text-potluck-light">FAQ</a></li>
+              <li><a href="/regulatory" className="text-potluck-dark hover:text-potluck-light">Regulatory</a></li>
+              <li><a href="/refer-a-friend" className="text-potluck-dark hover:text-potluck-light">Refer A Friend</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-base font-semibold text-potluck-light">Company</h3>
             <ul className="mt-4 space-y-3 text-xs">
-              <li><a href="#" className="text-potluck-dark hover:text-potluck-light">About</a></li>
-              <li><a href="#" className="text-potluck-dark hover:text-potluck-light">Press</a></li>
-              <li><a href="#" className="text-potluck-dark hover:text-potluck-light">Contact</a></li>
-              <li><a href="#" className="text-potluck-dark hover:text-potluck-light">Brand</a></li>
+              <li><a href="/about" className="text-potluck-dark hover:text-potluck-light">About</a></li>
+              <li><a href="/press" className="text-potluck-dark hover:text-potluck-light">Press</a></li>
+              <li><a href="/contact" className="text-potluck-dark hover:text-potluck-light">Contact</a></li>
+              <li><a href="/brand" className="text-potluck-dark hover:text-potluck-light">Brand</a></li>
             </ul>
           </div>
 
@@ -67,8 +67,8 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-8 flex flex-col sm:flex-row-reverse items-center justify-between">
            <div className="flex space-x-4 text-xs">
-              <a href="#" className="text-potluck-dark hover:text-potluck-light">Privacy</a>
-              <a href="#" className="text-potluck-dark hover:text-potluck-light">Terms</a>
+              <a href="/privacy-policy" className="text-potluck-dark hover:text-potluck-light">Privacy</a>
+              <a href="/terms-of-service" className="text-potluck-dark hover:text-potluck-light">Terms</a>
            </div>
           <p className="text-potluck-dark mt-4 sm:mt-0">
             &copy; {new Date().getFullYear()} Potluck Markets. All Rights Reserved.

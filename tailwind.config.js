@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         'potluck-bg': '#1a102c',
-        'potluck-purple': 'rgb(159 84 233 / <alpha-value>)', // Converted #9F54E9 to RGB for opacity support
+        'potluck-purple': '#9F54E9', // Converted #9F54E9 to RGB for opacity support
         'potluck-pink': '#f778c8',
         'potluck-light': '#f0e8ff',
         'potluck-dark': '#cbbde8',

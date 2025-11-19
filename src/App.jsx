@@ -11,6 +11,14 @@ import UseCasesPage from './pages/UseCasesPage'
 import FaqPage from './pages/FaqPage'
 import RegulatoryPage from './pages/RegulatoryPage'
 import ReferFriendPage from './pages/ReferFriendPage'
+import AboutPage from './pages/AboutPage'
+import PressPage from './pages/PressPage';
+import BrandPage from './pages/BrandPage';
+import ContactPage from './pages/ContactPage';
+import PostLaunchPage from './pages/posts/PostLaunchPage';
+import PostVisionPage from './pages/posts/PostVisionPage';
+
+
 
 
 
@@ -27,6 +35,14 @@ function App() {
         <Route path="/faq" element={<FaqPage />} /> 
         <Route path="/regulatory" element={<RegulatoryPage />} /> 
         <Route path="/refer-a-friend" element={<ReferFriendPage />} /> 
+        <Route path="/about" element={<AboutPage />} /> 
+        <Route path="/press" element={<PressPage />} /> 
+        <Route path="/press/launch" element={<PostLaunchPage />} />
+        <Route path="/brand" element={<BrandPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/press/vision" element={<PostVisionPage />} />
+
+
 
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
