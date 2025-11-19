@@ -30,12 +30,12 @@ export default function FeatureWheel({ features }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [features.length]);
 
-  const radius = 420; // Increased radius for larger cards
+  const radius = 350;
   const angleStep = 360 / features.length;
 
   return (
     <section ref={sectionRef} className="relative z-50 h-[300vh] pt-32">
-      <div className="sticky top-[22vh] h-[70vh] w-full">
+      <div className="sticky top-[18vh] h-[70vh] w-full">
         <div className="relative h-full w-full flex flex-col items-center justify-center">
           {/* 3D Rolodex Container */}
           <div style={{ perspective: '1000px' }}>
@@ -54,16 +54,16 @@ export default function FeatureWheel({ features }) {
                 return (
                   <div
                     key={feature.title}
-                    className={`absolute top-0 left-0 w-[32rem] h-[24rem] -mt-48 -ml-64 flex flex-col bg-[#251C37] border border-white/10 rounded-3xl p-10 text-left transition-all duration-500 ${isCardActive ? 'opacity-100' : 'opacity-60 blur-sm'}`}
+                    className={`absolute top-0 left-0 w-[24rem] h-[18rem] -mt-36 -ml-48 flex flex-col bg-[#251C37] border border-white/10 rounded-3xl p-8 text-left transition-all duration-500 ${isCardActive ? 'opacity-100' : 'opacity-60 blur-sm'}`}
                     style={{
                       transform: `rotateY(${cardAngle}deg) translateZ(${radius}px)`,
                     }}
                   >
-                    <div className="bg-potluck-purple/10 p-3 rounded-xl inline-block mb-6">
-                      <feature.icon className="w-8 h-8 text-potluck-purple" />
+                    <div className="bg-potluck-purple p-2 rounded-xl inline-flex items-center justify-center mb-4">
+                      <feature.icon className="h-6 w-auto text-potluck-light" />
                     </div>
-                    <h3 className="text-2xl font-bold text-potluck-light mb-4">{feature.title}</h3>
-                    <ul className="space-y-3 text-base text-potluck-dark leading-relaxed">
+                    <h3 className="text-xl font-bold text-potluck-light mb-3">{feature.title}</h3>
+                    <ul className="space-y-2 text-xs text-potluck-dark leading-relaxed">
                       {feature.description.map((point, i) => (
                         <li key={i} className="flex items-baseline gap-3"><span className="text-potluck-purple">&bull;</span><span>{point}</span></li>
                       ))}

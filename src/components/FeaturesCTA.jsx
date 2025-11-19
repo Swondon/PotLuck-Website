@@ -3,7 +3,7 @@ export default function FeaturesCTA() {
     <section className="py-20 text-center">
       <h2 className="text-4xl font-bold text-potluck-light mb-4">Ready to Start Predicting?</h2>
       <p className="text-lg text-potluck-dark mb-8 max-w-2xl mx-auto">
-        Turn predictions into contracts — download Potluck Markets today and start creating peer-to-peer agreements!
+        Turn predictions into contracts. Download Potluck Markets today and start creating peer-to-peer agreements!
       </p>
       <a
         href="https://apps.apple.com/us/app/potluck-markets/id6753965126"

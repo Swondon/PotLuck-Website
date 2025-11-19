@@ -58,17 +58,20 @@ const linkVariants = {
   }),
 };
 
-const DropdownMenu = ({ item, align }) => {
+const DropdownMenu = ({ item, align, currentPath }) => {
   return (
     <div className={`absolute top-full mt-2 w-max bg-potluck-bg/50 backdrop-blur-xl border border-potluck-dark rounded-3xl shadow-lg overflow-hidden ${align === 'left' ? 'left-0' : 'right-0'}`}>
       <ul className="p-2">
-        {item.subLinks.map((subLink) => (
-          <li key={subLink.title}>
-            <a href={subLink.href} className="block px-4 py-2 text-potluck-light hover:bg-white/10 transition-colors rounded-full">
-              {subLink.title}
-            </a>
-          </li>
-        ))}
+        {item.subLinks.map((subLink) => {
+          const isActive = subLink.href === currentPath;
+          return (
+            <li key={subLink.title}>
+              <a href={subLink.href} className={`block px-4 py-2 transition-colors rounded-full ${isActive ? 'text-potluck-purple font-semibold' : 'text-potluck-light hover:bg-white/10'}`}>
+                {subLink.title}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
@@ -77,6 +80,7 @@ const DropdownMenu = ({ item, align }) => {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const pathname = window.location.pathname;
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -108,7 +112,7 @@ export default function Navbar() {
                   <AnimatePresence>
                     {openDropdown === link.title && (
                       <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="absolute top-full w-full left-0">
-                        <DropdownMenu item={link} align={index === 0 ? 'left' : 'right'} />
+                        <DropdownMenu item={link} align={index === 0 ? 'left' : 'right'} currentPath={pathname} />
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -168,7 +172,7 @@ export default function Navbar() {
                           <a
                             href={subLink.href}
                             onClick={() => setIsOpen(false)}
-                            className="text-lg text-potluck-dark hover:text-potluck-purple transition-colors"
+                            className={`text-lg transition-colors ${pathname === subLink.href ? 'text-potluck-purple font-semibold' : 'text-potluck-dark hover:text-potluck-purple'}`}
                           >{subLink.title}</a>
                         </li>
                       ))}

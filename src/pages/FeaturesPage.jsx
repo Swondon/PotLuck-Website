@@ -3,6 +3,7 @@ import FeatureHero from '../components/FeatureHero';
 import FeaturesCTA from '../components/FeaturesCTA';
 import WhyPotluck from '../components/WhyPotluck';
 import FeatureWheel from '../components/FeatureWheel';
+import CompetitorMatrix from '../components/CompetitorMatrix';
 import Navbar from '../components/Navbar';
 
 const features = [
@@ -20,7 +21,7 @@ const features = [
     description: [
       "Jump into public or private markets created by your friends.",
       "All positions are transparent within your group, creating a fun and social dynamic.",
-      "Compete with friends and see who comes out on top."
+      "Compete with friends and see who wins."
     ],
     icon: FaUsers,
   },
@@ -57,6 +58,7 @@ export default function FeaturesPage() {
       <FeatureHero />
       <FeatureWheel features={features} />
       <WhyPotluck />
+      <CompetitorMatrix />
       <FeaturesCTA />
     </div>
   );
