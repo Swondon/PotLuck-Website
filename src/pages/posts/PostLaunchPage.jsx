@@ -1,10 +1,8 @@
-import Navbar from '../../../../components/Navbar';
 import FeaturesCTA from '../../components/FeaturesCTA';
 
 export default function PostLaunchPage() {
   return (
     <div className="bg-potluck-bg min-h-screen">
-      <Navbar />
       <article className="pt-48 pb-24">
         <header className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-sm font-semibold text-potluck-purple uppercase tracking-wider">Launch</p>
