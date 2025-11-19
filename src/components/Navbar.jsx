@@ -21,6 +21,7 @@ const navLinks = [
       { title: "About", href: "/about" },
       { title: "Press", href: "/press" },
       { title: "Contact", href: "/contact" },
+      { title: "Brand", href: "/brand" },
     ],
   },
 ];
@@ -86,18 +87,18 @@ export default function Navbar() {
   return (
     <>
       {/* Main Navbar Container */}
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] flex items-center justify-between w-[95vw] max-w-7xl">
+      <header className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between h-20 px-4 md:top-6 md:left-1/2 md:-translate-x-1/2 md:right-auto md:w-[95vw] md:max-w-7xl md:px-0 md:h-auto">
         {/* Logo */}
         <div>
-          <a href="/" className="flex items-center space-x-3 group h-12 px-4 bg-potluck-bg/50 backdrop-blur-md border border-potluck-dark rounded-full">
+          <a href="/" className="flex items-center justify-center w-12 h-12 bg-potluck-bg/50 backdrop-blur-md border border-potluck-dark rounded-full group md:w-auto md:px-6 md:space-x-3">
             <img src={PotluckLogo} alt="Potluck Markets Logo" className="h-8 w-auto" />
-            <span className="text-potluck-light font-bold text-xl group-hover:text-potluck-purple transition-colors hidden sm:inline">Potluck Markets</span>
+            <span className="text-potluck-light font-bold text-xl group-hover:text-potluck-purple transition-colors hidden md:inline">Potluck Markets</span>
           </a>
         </div>
 
         {/* Desktop Nav & Download Button */}
         <div className="hidden md:flex items-center space-x-4">
-          <nav className="flex relative items-center h-12 px-4 bg-potluck-bg/50 backdrop-blur-md border border-potluck-dark rounded-full">
+          <nav className="flex relative items-center h-12 px-6 bg-potluck-bg/50 backdrop-blur-md border border-potluck-dark rounded-full">
             <ul className="flex items-center space-x-6">
               {navLinks.map((link, index) => (
                 <li // The li is now static, letting the dropdown be positioned relative to the nav
@@ -105,7 +106,7 @@ export default function Navbar() {
                   onMouseEnter={() => setOpenDropdown(link.title)}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <button className="text-potluck-light font-semibold hover:text-potluck-purple transition-colors px-2">
+                  <button className="text-potluck-light font-semibold hover:text-potluck-purple transition-colors">
                     {link.title}
                   </button>
                   <AnimatePresence>
@@ -123,32 +124,30 @@ export default function Navbar() {
             href="https://apps.apple.com/us/app/potluck-markets/id6753965126"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center h-12 px-6 bg-potluck-bg/50 text-potluck-light font-semibold rounded-full hover:bg-opacity-90 transition-colors border border-potluck-dark"
+            className="flex items-center justify-center h-12 px-6 bg-potluck-bg/50 backdrop-blur-md border border-potluck-dark text-potluck-light font-semibold rounded-full hover:bg-white/10 transition-colors"
           >
             Download
           </a>
         </div>
 
         {/* Hamburger Menu Button (Mobile) */}
-        <div className="md:hidden">
-          <button onClick={toggleMenu} className="w-12 h-12 bg-potluck-bg/50 backdrop-blur-md border border-potluck-dark rounded-full flex flex-col justify-center items-center space-y-1.5">
+        <button onClick={toggleMenu} className="md:hidden w-12 h-12 bg-potluck-bg/50 backdrop-blur-md border border-potluck-dark rounded-full flex flex-col justify-center items-center space-y-1.5" aria-label="Toggle Menu">
           <motion.span
             className="block w-6 h-0.5 bg-potluck-light"
-            animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 4.5 : 0 }}
+            animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 8 : 0, width: isOpen ? '1.5rem' : '1.5rem' }}
             transition={{ duration: 0.3 }}
           />
           <motion.span
             className="block w-6 h-0.5 bg-potluck-light"
             animate={{ opacity: isOpen ? 0 : 1 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.1 }}
           />
           <motion.span
             className="block w-6 h-0.5 bg-potluck-light"
-            animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -4.5 : 0 }}
+            animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -8 : 0, width: isOpen ? '1.5rem' : '1.5rem' }}
             transition={{ duration: 0.3 }}
           />
-          </button>
-        </div>
+        </button>
       </header>
 
       <AnimatePresence>
@@ -179,14 +178,14 @@ export default function Navbar() {
                   </motion.li>
                 ))}
               </ul>
-              <div className="mt-12">
+              <div className="mt-auto pt-8">
                 <a
                   href="https://apps.apple.com/us/app/potluck-markets/id6753965126"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block transition-transform hover:scale-105"
+                  className="inline-block transition-transform hover:scale-105 w-36"
                 >
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" className="h-14" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" className="w-full h-auto" />
                 </a>
               </div>
             </nav>
