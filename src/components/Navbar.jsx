@@ -21,7 +21,6 @@ const navLinks = [
       { title: "About", href: "/about" },
       { title: "Press", href: "/press" },
       { title: "Contact", href: "/contact" },
-      { title: "Brand", href: "/brand" },
     ],
   },
 ];
