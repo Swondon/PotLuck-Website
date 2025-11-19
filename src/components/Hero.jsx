@@ -85,11 +85,11 @@ export default function Hero() {
                 The peer-to-peer social prediction marketplace<br />for moments that matter to you.
               </p>
               <div className="flex justify-center items-center space-x-4">
-                <a href="#" className="group inline-flex items-center bg-potluck-purple text-white font-semibold py-3 px-6 rounded-full hover:bg-opacity-90 transition-colors">
+                <a href="https://apps.apple.com/us/app/potluck-markets/id6753965126" className="group inline-flex items-center bg-potluck-purple text-white font-semibold py-3 px-6 rounded-full hover:bg-opacity-90 transition-colors">
                   Download on the App Store
                   <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
                 </a>
-                <a href="#" className="border border-potluck-dark text-potluck-dark font-semibold py-3 px-6 rounded-full hover:bg-potluck-dark hover:text-potluck-bg transition-colors">
+                <a href="/features" className="border border-potluck-dark text-potluck-dark font-semibold py-3 px-6 rounded-full hover:bg-white/10 transition-colors">
                   Learn More
                 </a>
               </div>
