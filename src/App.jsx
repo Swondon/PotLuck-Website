@@ -17,6 +17,7 @@ import BrandPage from './pages/BrandPage';
 import ContactPage from './pages/ContactPage';
 import PostLaunchPage from './pages/posts/PostLaunchPage';
 import PostVisionPage from './pages/posts/PostVisionPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/press/vision" element={<PostVisionPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
