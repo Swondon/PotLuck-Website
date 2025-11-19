@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PotluckLogo from '/potlucklogo.png';
 
@@ -8,7 +8,7 @@ const navLinks = [
     title: "Product",
     subLinks: [
       { title: "Features", href: "/features" },
-      { title: "How it Works", href: "/how-it-works" },
+      { title: "How It Works", href: "/how-it-works" },
       { title: "Use Cases", href: "/use-cases" },
       { title: "FAQ", href: "/faq" },
       { title: "Regulatory", href: "/regulatory" },
@@ -149,48 +149,49 @@ export default function Navbar() {
         </button>
       </header>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            variants={menuVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            className="fixed top-0 right-0 h-full w-full sm:w-80 bg-potluck-bg/80 backdrop-blur-xl z-[90] shadow-2xl"
-          >
-            <nav className="h-full flex flex-col justify-center items-center pt-24 pb-12">
-              <ul className="space-y-8 text-center">
-                {navLinks.map((item, i) => (
-                  <motion.li key={item.title} custom={i} variants={linkVariants} initial="hidden" animate="visible">
-                    <div className="text-2xl font-bold text-potluck-light mb-4">{item.title}</div>
-                    <ul className="space-y-4">
-                      {item.subLinks.map((subLink) => (
-                        <li key={subLink.title}>
-                          <a
-                            href={subLink.href}
-                            onClick={() => setIsOpen(false)}
-                            className={`text-lg transition-colors ${pathname === subLink.href ? 'text-potluck-purple font-semibold' : 'text-potluck-dark hover:text-potluck-purple'}`}
-                          >{subLink.title}</a>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.li>
-                ))}
-              </ul>
-              <div className="mt-auto pt-8">
-                <a
-                  href="https://apps.apple.com/us/app/potluck-markets/id6753965126"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-transform hover:scale-105 w-36"
-                >
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" className="w-full h-auto" />
-                </a>
-              </div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              variants={menuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="fixed top-0 right-0 h-full w-full sm:w-80 bg-potluck-bg/80 backdrop-blur-xl z-[90] shadow-2xl"
+            >
+              <nav className="h-full flex flex-col justify-center items-center pt-24 pb-12">
+                <ul className="space-y-8 text-center">
+                  {navLinks.map((item, i) => (
+                    <motion.li key={item.title} custom={i} variants={linkVariants} initial="hidden" animate="visible">
+                      <div className="text-2xl font-bold text-potluck-light mb-4">{item.title}</div>
+                      <ul className="space-y-4">
+                        {item.subLinks.map((subLink) => (
+                          <li key={subLink.title}>
+                            <a
+                              href={subLink.href}
+                              onClick={() => setIsOpen(false)}
+                              className={`text-lg transition-colors ${pathname === subLink.href ? 'text-potluck-purple font-semibold' : 'text-potluck-dark hover:text-potluck-purple'}`}
+                            >{subLink.title}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-8">
+                  <a
+                    href="https://apps.apple.com/us/app/potluck-markets/id6753965126"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block transition-transform hover:scale-105 w-36"
+                  >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" alt="Download on the App Store" className="w-full h-auto" />
+                  </a>
+                </div>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
     </>
   );
 }

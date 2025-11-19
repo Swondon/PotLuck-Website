@@ -19,7 +19,7 @@ export default function Footer() {
             <h3 className="text-base font-semibold text-potluck-light">Product</h3>
             <ul className="mt-4 space-y-3 text-xs">
               <li><a href="/features" className="text-potluck-dark hover:text-potluck-light">Features</a></li>
-              <li><a href="/how-it-works" className="text-potluck-dark hover:text-potluck-light">How it Works</a></li>
+              <li><a href="/how-it-works" className="text-potluck-dark hover:text-potluck-light">How It Works</a></li>
               <li><a href="/use-cases" className="text-potluck-dark hover:text-potluck-light">Use Cases</a></li>
               <li><a href="/faq" className="text-potluck-dark hover:text-potluck-light">FAQ</a></li>
               <li><a href="/regulatory" className="text-potluck-dark hover:text-potluck-light">Regulatory</a></li>
@@ -39,7 +39,7 @@ export default function Footer() {
 
           <div className="col-span-2 md:col-span-4 xl:col-span-2 xl:col-start-5 xl:text-right">
             <h3 className="text-base font-semibold text-potluck-light">Socials</h3>
-            <div className="flex justify-end space-x-5 mt-4">
+            <div className="flex justify-start xl:justify-end space-x-5 mt-4">
               <a href="https://x.com/potluckmarkets" target="_blank" rel="noopener noreferrer" className="text-potluck-dark hover:text-potluck-light">
                 <span className="sr-only">X</span>
                 <FaXTwitter className="h-5 w-5" />
@@ -53,14 +53,14 @@ export default function Footer() {
                 <FaLinkedin className="h-5 w-5" />
               </a>
             </div>
-            <div className="mt-8">
-              <a href="#" className="inline-flex items-center space-x-2 text-xs">
+            <div className="mt-8 flex justify-start xl:justify-end">
+              <div className="inline-flex items-center space-x-2 text-xs">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <span className="text-potluck-dark hover:text-potluck-light">All systems operational.</span>
-              </a>
+                <span className="text-potluck-dark">All systems operational.</span>
+              </div>
             </div>
           </div>
         </div>

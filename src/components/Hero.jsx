@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
-import Navbar from './Navbar';
 import '../styles/animations.css';
 
 const phrases = [
@@ -59,11 +58,10 @@ export default function Hero() {
 
   return (
     <header className="h-screen flex flex-col justify-center items-center text-center px-5 bg-potluck-bg sticky top-0 z-10">
-      <Navbar />
       <div className="space-y-12 w-full pt-24">
-        <h1 className="text-5xl md:text-8xl leading-tight flex flex-col items-center">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl leading-tight flex flex-col items-center">
           <span className="text-potluck-light font-bold">Predict</span>
-          <span className="relative w-[18ch] h-[3em]">
+          <span className="relative w-full max-w-[18ch] h-[3em]">
             {/* Current phrase fading in. The final phrase appears instantly. */}
             <span key={`current-${currentIndex}`} className={`absolute inset-0 w-full text-center text-potluck-purple ${currentPhrase.font} ${isCycling ? 'animate-cycle-in' : ''}`}>
               {currentPhrase.text}
@@ -81,16 +79,18 @@ export default function Hero() {
         <div className="h-40 min-h-[10rem]">
           {showSubtitle && (
             <div className="opacity-0 animate-settle space-y-8">
-              <p className="text-lg md:text-xl text-potluck-dark max-w-2xl leading-relaxed mx-auto">
-                The peer-to-peer social prediction marketplace<br />for moments that matter to you.
+              <p className="text-lg md:text-xl text-potluck-dark max-w-sm leading-relaxed mx-auto">
+                The social prediction marketplace for moments that matter to you.
               </p>
               <div className="flex justify-center items-center space-x-4">
                 <a href="https://apps.apple.com/us/app/potluck-markets/id6753965126" className="group inline-flex items-center bg-potluck-purple text-white font-semibold py-3 px-6 rounded-full hover:bg-opacity-90 transition-colors">
-                  Download on the App Store
+                  <span className="md:hidden">Download</span>
+                  <span className="hidden md:inline">Download on the App Store</span>
                   <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a href="/features" className="border border-potluck-dark text-potluck-dark font-semibold py-3 px-6 rounded-full hover:bg-white/10 transition-colors">
-                  Learn More
+                  <span className="md:hidden">More</span>
+                  <span className="hidden md:inline">Learn More</span>
                 </a>
               </div>
             </div>

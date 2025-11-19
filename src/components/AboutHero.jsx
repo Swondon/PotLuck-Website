@@ -41,8 +41,8 @@ export default function AboutHero() {
         {/* Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((stat, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <p className="text-4xl font-bold text-potluck-purple">{stat.value}</p>
+            <motion.div key={index} variants={itemVariants} className="bg-[#251C37] border border-white/10 rounded-3xl p-6 flex flex-col justify-center">
+              <p className="text-3xl md:text-4xl font-bold text-potluck-purple">{stat.value}</p>
               <p className="text-sm text-potluck-dark uppercase tracking-wider mt-2">{stat.label}</p>
             </motion.div>
           ))}

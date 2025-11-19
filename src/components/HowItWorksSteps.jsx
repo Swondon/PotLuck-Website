@@ -62,7 +62,7 @@ export default function HowItWorksSteps() {
     <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto relative">
         {/* Vertical dotted line */}
-        <div className="absolute left-8 top-0 h-full w-px bg-white/10">
+        <div className="absolute left-8 top-0 h-full w-px bg-white/10 hidden md:block">
           <div className="h-full w-full border-l-2 border-dashed border-potluck-dark/50"></div>
         </div>
 
@@ -70,28 +70,29 @@ export default function HowItWorksSteps() {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className="relative pl-24"
+              className="relative md:pl-24"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
             >
-              {/* Icon on the line */}
-              <div className="absolute top-0 left-0 w-16 h-16 bg-potluck-purple rounded-full flex items-center justify-center">
-                <span className="text-2xl font-bold text-potluck-light">{index + 1}</span>
-              </div>
-
               {/* Card Content */}
               <div className="bg-[#251C37] border border-white/10 rounded-3xl p-8">
-                <h3 className="text-3xl font-bold text-potluck-purple mb-4">{step.title}</h3>
-                <p className="text-lg text-potluck-dark leading-relaxed mb-6">{step.description}</p>
-                <div className="space-y-4">
-                  {step.points.map((point, i) => (
-                    <div key={i} className="flex items-start gap-3 text-potluck-light">
-                      <span className="text-potluck-purple mt-1.5 flex-shrink-0">&bull;</span>
-                      <span className="flex-1 text-lg" dangerouslySetInnerHTML={{ __html: point }} />
-                    </div>
-                  ))}
+                {/* Number Circle - Centered on mobile, absolute on desktop */}
+                <div className="relative md:absolute md:top-0 md:left-0 -mt-16 md:mt-0 mb-8 md:mb-0 w-16 h-16 bg-potluck-purple rounded-full flex items-center justify-center mx-auto md:mx-0">
+                  <span className="text-2xl font-bold text-potluck-light">{index + 1}</span>
+                </div>
+                <div className="text-center md:text-left">
+                  <h3 className="text-3xl font-bold text-potluck-purple mb-4">{step.title}</h3>
+                  <p className="text-lg text-potluck-dark leading-relaxed mb-6">{step.description}</p>
+                  <div className="space-y-4 text-left">
+                    {step.points.map((point, i) => (
+                      <div key={i} className="flex items-start gap-3 text-potluck-light">
+                        <span className="text-potluck-purple mt-1.5 flex-shrink-0">&bull;</span>
+                        <span className="flex-1 text-lg" dangerouslySetInnerHTML={{ __html: point }} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>

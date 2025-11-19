@@ -67,9 +67,9 @@ export default function HowItWorks() {
   return (
     <section ref={sectionRef} id="how-it-works" className="relative z-10 h-[300vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden bg-potluck-purple" style={{ borderTopLeftRadius: `${borderRadius}px`, borderTopRightRadius: `${borderRadius}px` }}>
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 text-center w-full px-6 z-10">
+        <div className="absolute top-24 md:top-1/4 left-1/2 -translate-x-1/2 text-center w-full px-6 z-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-5 leading-tight text-potluck-light">How It Works</h2>
-          <p className="text-lg md:text-xl text-potluck-light max-w-3xl mx-auto leading-relaxed">
+          <p className="hidden md:block text-lg md:text-xl text-potluck-light max-w-3xl mx-auto leading-relaxed">
             Four simple steps from creating a market to celebrating your wins
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function HowItWorks() {
           </div>
           {steps.map((step, index) => (
             <React.Fragment key={step.number}>
-              <div className="relative z-10 w-[50vw] flex-shrink-0 px-8 bg-potluck-purple">
+              <div className="relative z-10 w-[80vw] md:w-[50vw] flex-shrink-0 px-8 bg-potluck-purple">
                 <div className="max-w-md text-center mx-auto">
                   <div className="inline-block bg-white/10 text-potluck-light font-bold py-1 px-3 rounded-full text-sm mb-4">
                     Step {step.number}

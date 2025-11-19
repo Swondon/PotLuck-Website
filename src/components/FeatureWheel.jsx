@@ -1,7 +1,27 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+
+// Custom hook to check screen width
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // Tailwind's `md` breakpoint
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  return isMobile;
+};
 
 export default function FeatureWheel({ features }) {
+  const isMobile = useIsMobile();
   const sectionRef = useRef(null);
   const [rotation, setRotation] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -29,6 +49,35 @@ export default function FeatureWheel({ features }) {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [features.length]);
+
+  if (isMobile) {
+    return (
+      <section className="py-20 px-6 bg-potluck-bg">
+        <div className="max-w-md mx-auto space-y-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="bg-[#251C37] border border-white/10 rounded-3xl p-8 text-left"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              <div className="bg-potluck-purple p-2 rounded-xl inline-flex items-center justify-center mb-4">
+                <feature.icon className="h-6 w-auto text-potluck-light" />
+              </div>
+              <h3 className="text-xl font-bold text-potluck-light mb-3">{feature.title}</h3>
+              <ul className="space-y-2 text-sm text-potluck-dark leading-relaxed">
+                {feature.description.map((point, i) => (
+                  <li key={i} className="flex items-baseline gap-3"><span className="text-potluck-purple">&bull;</span><span>{point}</span></li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   const radius = 350;
   const angleStep = 360 / features.length;
@@ -63,7 +112,7 @@ export default function FeatureWheel({ features }) {
                       <feature.icon className="h-6 w-auto text-potluck-light" />
                     </div>
                     <h3 className="text-xl font-bold text-potluck-light mb-3">{feature.title}</h3>
-                    <ul className="space-y-2 text-xs text-potluck-dark leading-relaxed">
+                    <ul className="space-y-2 text-sm text-potluck-dark leading-relaxed">
                       {feature.description.map((point, i) => (
                         <li key={i} className="flex items-baseline gap-3"><span className="text-potluck-purple">&bull;</span><span>{point}</span></li>
                       ))}
