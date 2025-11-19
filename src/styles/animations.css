@@ -1,0 +1,92 @@
+@keyframes blend-in {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@keyframes cycle-in {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(2px);
+  }
+}
+
+@keyframes blend-out {
+  from {
+    opacity: 1;
+    filter: blur(2px);
+  }
+  to {
+    opacity: 0;
+    filter: blur(8px);
+  }
+}
+
+.animate-blend-in {
+  animation: blend-in 300ms ease-in-out forwards;
+}
+.animate-cycle-in {
+  animation: cycle-in 300ms ease-in-out forwards;
+}
+.animate-blend-out {
+  animation: blend-out 300ms ease-in-out forwards;
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-settle {
+  animation: settle 500ms ease-out forwards;
+}
+
+@keyframes bounce-subtle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
+  }
+
+@keyframes settle-and-bounce {
+  /* Settle Phase (first 500ms) */
+  0%, 10% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Bounce Phase (loops infinitely after 500ms) */
+  25% {
+    transform: translateY(-6px);
+  }
+  30%, 100% {
+    transform: translateY(0);
+  }
+}
+.animate-settle-and-bounce {
+  /* Total duration 2s. First 500ms is settle, then it loops the bounce. */
+  animation: settle-and-bounce 5s ease-in-out infinite;
+  animation-delay: 500ms;
+}

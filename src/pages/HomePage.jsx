@@ -1,13 +1,17 @@
 import Hero from '../components/Hero'
-import HorizontalScroll from '../components/HorizontalScroll'
+import HowItWorks from '../components/HowItWorks'
+import About from '../components/About'
 import AppLaunch from '../components/AppLaunch'
-import Carousel from '../components/Carousel'
+import Possibilities from '../components/Possibilities'
+
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <HorizontalScroll />
+      <HowItWorks />
+      <About />
+      <Possibilities />
       <AppLaunch />
     </>
   )
