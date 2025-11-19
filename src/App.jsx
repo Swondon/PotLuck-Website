@@ -25,31 +25,26 @@ import PostVisionPage from './pages/posts/PostVisionPage';
 function App() {
   return (
     <BrowserRouter>
-      <div className="max-w-full overflow-x-hidden">
-        <CursorGlow />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/features" element={<FeaturesPage />} />
-          <Route path="/how-it-works" element={<HowItWorksPage />} />
-          <Route path="/use-cases" element={<UseCasesPage />} /> 
-          <Route path="/faq" element={<FaqPage />} /> 
-          <Route path="/regulatory" element={<RegulatoryPage />} /> 
-          <Route path="/refer-a-friend" element={<ReferFriendPage />} /> 
-          <Route path="/about" element={<AboutPage />} /> 
-          <Route path="/press" element={<PressPage />} /> 
-          <Route path="/press/launch" element={<PostLaunchPage />} />
-          <Route path="/brand" element={<BrandPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/press/vision" element={<PostVisionPage />} />
-
-
-
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-        </Routes>
-        <Footer />
-      </div>
+      <CursorGlow />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/how-it-works" element={<HowItWorksPage />} />
+        <Route path="/use-cases" element={<UseCasesPage />} />
+        <Route path="/faq" element={<FaqPage />} />
+        <Route path="/regulatory" element={<RegulatoryPage />} />
+        <Route path="/refer-a-friend" element={<ReferFriendPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/press" element={<PressPage />} />
+        <Route path="/press/launch" element={<PostLaunchPage />} />
+        <Route path="/brand" element={<BrandPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/press/vision" element={<PostVisionPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+      </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
