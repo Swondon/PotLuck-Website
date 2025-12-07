@@ -5,21 +5,11 @@ const founders = [
     name: "Ian Condon",
     title: "CEO",
     image: "/ian.jpeg",
-    bio: [
-      "4x startup and technical challenge award winner.",
-      "SWE intern experience at Gilbarco Veeder-Root.",
-      "Early-stage R&D grant recipient."
-    ]
   },
   {
     name: "Brennen Farrell",
     title: "CTO",
     image: "/brennen.jpeg",
-    bio: [
-      "SWE intern experience at Wells Fargo.",
-      "First author of a peer-reviewed IEEE research paper.",
-      "Proven leader (team captain, high school salutatorian)."
-    ]
   }
 ];
 
@@ -79,14 +69,6 @@ export default function AboutContent() {
                 </div>
                 <h3 className="text-3xl font-bold text-potluck-light">{member.name}</h3>
                 <p className="text-lg font-semibold text-potluck-purple">{member.title}</p>
-                <ul className="mt-4 space-y-2 text-potluck-dark text-left">
-                  {member.bio.map((point, i) => (
-                    <li key={i} className="flex items-baseline gap-3">
-                      <span className="text-potluck-purple flex-shrink-0">&bull;</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
               </motion.div>
             ))}
           </div>
